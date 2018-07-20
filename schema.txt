@@ -1,0 +1,98 @@
+
+farmer_profile
+dealer_profile
+admin_profile
+complaint
+complaint_read
+complaint_edit_by_admin
+complaint_update_by_admin
+dealer_post_ad
+farmer_post_ad
+notification
+notify_by_sms
+dealer_sell_product_to_farmer
+farmer_sell_product_to_dealer
+farmer_sell_product_to_farmer
+ratting
+
+
+
+Farmer
+  id (integer) (pk)
+  username (string)
+  password (string)
+  name  (string)
+  phone (string)
+  email (string)
+  address (string)
+
+Dealer
+  id (integer) (pk)
+  name (string)
+  username (string)
+  password (string)
+  email (string)
+  phone (string)
+  address (string)
+
+Farmer_complaint
+  id (integer) (pk)
+  farmer_id (integer) (fk Farmer)
+  text (string)
+  status (string) (default = unread)
+
+Dealer_Post_Ad
+  id (integer) (pk)
+  name (string)
+  dealer_id (integer) (fk Dealer)
+  description (string)
+  image (string)
+  //quntity (integer)
+
+Farmer_post
+  id
+  name
+  farmer_id
+  description
+  image
+
+Dealer_Sell_To_Farmer
+  id (integer)
+  name (string)
+  farmer_id (integer)
+  date (date)
+  quntity (integer)
+  rupees (integer)
+
+Farmer_Sell_To_Dealer
+  id (integer)
+  name (string)
+  farmer_id (integer)
+  date (date)
+  quntity (integer)
+  rupees (integer)
+
+Farmer_Sell_To_Farmer
+  id (integer)
+  name (string)
+  farmer_id (integer)
+  date (date)
+  quntity (integer)
+  rupees (integer)
+
+Notification
+  id (integer)
+  deaaler_id (integer)
+  usr (string)
+  text (string)
+
+
+Product_Ratting
+  id (integer)
+  product_id (integer)
+  rate (float)
+
+Admin
+  id
+  name
+  password
