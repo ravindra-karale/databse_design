@@ -1,4 +1,3 @@
-
 farmer_profile
 dealer_profile
 admin_profile
@@ -17,82 +16,96 @@ ratting
 
 
 
-Farmer
+User
   id (integer) (pk)
   username (string)
   password (string)
   name  (string)
-  phone (string)
   email (string)
+  phone (string)
+  role_id
+  date
   address (string)
+  district
+  state
+  contray
 
-Dealer
-  id (integer) (pk)
-  name (string)
-  username (string)
-  password (string)
-  email (string)
-  phone (string)
-  address (string)
+role
+  role_id
+  name
+
+Product
+  id
+  user_id
+  prod_name
+  description
+  quntity
+  status
+  purchase_price
+  sale_price
+  date
+
+Advertise
+  id
+  title
+  descriprion
+  user_id
+  date
+  status
+
+product_ratting
+  id
+  prod_id
+  user_id
+  ratting
+  date
+
+Product_sale
+  id
+  order_id
+  user_id
+  date
+
+Product_sale_details
+  id
+  order_id
+  prod_id
+  purchase_price
+  sale_price
+  quntity
 
 Farmer_complaint
   id (integer) (pk)
-  farmer_id (integer) (fk Farmer)
+  farmer_id (integer) (fk)
   text (string)
-  status (string) (default = unread)
-
-Dealer_Post_Ad
-  id (integer) (pk)
-  name (string)
-  dealer_id (integer) (fk Dealer)
-  description (string)
-  image (string)
-  //quntity (integer)
-
-Farmer_post
-  id
-  name
-  farmer_id
-  description
-  image
-
-Dealer_Sell_To_Farmer
-  id (integer)
-  name (string)
-  farmer_id (integer)
-  date (date)
-  quntity (integer)
-  rupees (integer)
-
-Farmer_Sell_To_Dealer
-  id (integer)
-  name (string)
-  farmer_id (integer)
-  date (date)
-  quntity (integer)
-  rupees (integer)
-
-Farmer_Sell_To_Farmer
-  id (integer)
-  name (string)
-  farmer_id (integer)
-  date (date)
-  quntity (integer)
-  rupees (integer)
+  status (string) (default)
 
 Notification
-  id (integer)
-  deaaler_id (integer)
-  usr (string)
-  text (string)
+  id (integer) (pk)
+  title
+  url
+  description (string)
+  date
 
+Product_bidding
+  p_b_id
+  user_id
+  prod_name
+  description
+  quntity
+  measure_unit
+  baseprice
+  start_datetime
+  end_datetime
 
-Product_Ratting
-  id (integer)
-  product_id (integer)
-  rate (float)
-
-Admin
+Product_bidding_details
   id
-  name
-  password
+  p_b_id
+
+Farmer_Produce
+  id
+  user_id
+  crop_name
+  durration
+  quntity
+  crop_aprox_date_comes_in_market
